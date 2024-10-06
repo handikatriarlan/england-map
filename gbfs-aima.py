@@ -1,6 +1,6 @@
 from aima.search import GraphProblem, UndirectedGraph, greedy_best_first_graph_search
 
-romania_map = UndirectedGraph(dict(
+england_map = UndirectedGraph(dict(
     Manchester = dict(Liverpool=30, Sheffield=40),
     Liverpool = dict(Manchester=30, Shrewsbury=70, Nottingham=110),
     Sheffield = dict(Manchester=40, Nottingham=40),
@@ -28,18 +28,18 @@ heuristic = {
     'Oxford': 70
 }
 
-romania_map.locations = heuristic
+england_map.locations = heuristic
 
-class RomaniaProblem(GraphProblem):
+class EnglandProblem(GraphProblem):
     def h(self, node):
-        return romania_map.locations[node.state]
+        return england_map.locations[node.state]
 
 start_city = input("Input your starting city: ").strip().title()
 goal_city = input("Input your destination city: ").strip().title()
 
-romania_problem = RomaniaProblem(start_city, goal_city, romania_map)
+england_problem = EnglandProblem(start_city, goal_city, england_map)
 
-result = greedy_best_first_graph_search(romania_problem, lambda node: romania_problem.h(node))
+result = greedy_best_first_graph_search(england_problem, lambda node: england_problem.h(node))
 
 if result:
     solution_path = result.solution()

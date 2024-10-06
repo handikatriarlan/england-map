@@ -1,6 +1,6 @@
 from aima.search import GraphProblem, UndirectedGraph, depth_first_graph_search
 
-romania_map = UndirectedGraph(dict(
+england_map = UndirectedGraph(dict(
     Manchester = dict(Liverpool=None, Sheffield=None),
     Liverpool = dict(Manchester=None, Shrewsbury=None, Nottingham=None),
     Sheffield = dict(Manchester=None, Nottingham=None),
@@ -17,9 +17,9 @@ romania_map = UndirectedGraph(dict(
 start_city = input("Input your starting city: ").strip().title()
 goal_city = input("Input your destination city: ").strip().title()
 
-romania_problem = GraphProblem(start_city, goal_city, romania_map)
+england_problem = GraphProblem(start_city, goal_city, england_map)
 
-result = depth_first_graph_search(romania_problem)
+result = depth_first_graph_search(england_problem)
 
 if result:
     solution_path = result.solution()
