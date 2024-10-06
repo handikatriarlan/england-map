@@ -1,4 +1,4 @@
-from aima.search import GraphProblem, UndirectedGraph, breadth_first_tree_search
+from aima.search import GraphProblem, UndirectedGraph, breadth_first_graph_search
 
 romania_map = UndirectedGraph(dict(
     Manchester = dict(Liverpool=30, Sheffield=40),
@@ -19,7 +19,7 @@ goal_city = input("Input your destination city: ").strip().title()
 
 romania_problem = GraphProblem(start_city, goal_city, romania_map)
 
-result = breadth_first_tree_search(romania_problem)
+result = breadth_first_graph_search(romania_problem)
 
 if result:
     solution_path = result.solution()
