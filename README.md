@@ -42,8 +42,8 @@ To run the project, follow these steps:
 ```python
 from search import breadth_first_tree_search
 
-solution = breadth_first_tree_search(romania_problem)
-print(solution.solution())
+result = breadth_first_graph_search(england_problem)
+print(result.solution())
 ```
 
 ### Depth-First Search (DFS)
@@ -51,8 +51,8 @@ print(solution.solution())
 ```python
 from search import depth_first_tree_search
 
-solution = depth_first_tree_search(romania_problem)
-print(solution.solution())
+result = depth_first_graph_search(england_problem)
+print(result.solution())
 ```
 
 ### Greedy Best-First Search
@@ -60,8 +60,8 @@ print(solution.solution())
 ```python
 from search import greedy_best_first_graph_search
 
-solution = greedy_best_first_graph_search(romania_problem, lambda n: romania_map.locations[n.state])
-print(solution.solution())
+result = greedy_best_first_graph_search(england_problem, lambda node: england_problem.h(node))
+print(result.solution())
 ```
 
 ### A-Star (A\*)
@@ -69,6 +69,6 @@ print(solution.solution())
 ```python
 from search import astar_search
 
-solution = astar_search(romania_problem)
-print(solution.solution())
+result = astar_search(england_problem, lambda node: england_problem.h(node))
+print(result.solution())
 ```
